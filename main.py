@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from datetime import datetime
 import re
 
 load_dotenv()
@@ -19,7 +20,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "🖤💛 Seu companheiro da torcida FURIA aqui no Telegram! Vamos juntos apoiar a nossa bandeira e gritar pelos nossos! 💥\n"
         "🎮 Fique ligado em tudo sobre os jogos, resultados e notícias.\n\n"
         "*Vamos invadir a arena e dominar o jogo!* ⚔️\n"
-        "_#FURIA #CSGO #GoFURIA_"
+        "_#FURIA #CSGO #GoFURIA\n\n"
+
+        "📝 *Comandos disponíveis:*\n"
+        "/start - Inicia a conversa com o bot\n"
+        "/proximojogo - Mostra o próximo jogo da FURIA\n"
+        "/historia - Conta a história da FURIA\n"
+        "/razao - Fala sobre o motivo de amarmos a FURIA\n"
+        "/recordes - Mostra os recordes da FURIA\n"
+        "/futuro - Fala sobre o futuro da FURIA\n"
     )
     await update.message.reply_markdown_v2(escapar_markdown_v2(mensagem))
 
